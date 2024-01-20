@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://cdn.discordapp.com/attachments/1193880101931200592/1198259711510839416/wp7932324.webp?ex=65be4151&is=65abcc51&hm=1fa06093a4c194e40ce5a8f79de2eeb8d6d0ccb59441b987eac041834745ff0e&'); /* Add your image URL here */
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        h2 {
+            color: #333;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+
+        p {
+            margin-top: 15px;
+            color: #333;
+        }
+
+
+        a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="signup()">Sign Up</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="Oakridge2.html">Login</a></p>
+    </div>
+
+
+    <script>
+        function signup() {
+            var newUsername = document.getElementById('newUsername').value;
+            var newPassword = document.getElementById('newPassword').value;
+
+
+            if (newUsername && newPassword) {
+                if (localStorage.getItem(newUsername)) {
+                    alert('Username already exists. Please choose another.');
+                } else {
+                    localStorage.setItem(newUsername, JSON.stringify({ password: newPassword }));
+                    alert('Account created successfully!');
+                }
+            } else {
+                alert('Please fill in both fields.');
+            }
+        }
+    </script>
+</body>
+
+
+</html>
