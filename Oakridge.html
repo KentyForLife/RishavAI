@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="Oakridge.css">
+    <style>
+        .intro,
+        .topics {
+            position: relative;
+            padding: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .intro.show,
+        .topics.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro h2,
+        .topics h2 {
+            margin-top: 0;
+        }
+
+        .login-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .creators-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 20px auto;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RishavAI</h1>
+        <p>AI is coming. AI is the future. AI will complete the uncompleted.</p>
+    </header>
+
+    <div class="main-content">
+        <div class="intro" id="intro">
+            <h2>Introducing RishavAI: Transforming Education for a Brighter Tomorrow.</h2>
+            <p>Join the educational revolution with RishavAI, your ultimate companion in redefining the learning experience. From automating engaging quizzes to streamlining project tasks, RishavAI is here to make education not only efficient but enjoyable. With a global impact and personalized learning at its core, RishavAI is the key to unlocking a stress-free and successful educational journey. Say hello to a future where innovation meets learning, and students are empowered to reach their full potential. Welcome to the RishavAI revolution!
+            </p>
+        </div>
+
+        <div class="topics" id="topics">
+            <h2>Brief history of RishavAI's creators</h2>
+            <a href="creators.html">
+                <img src="data:image/jpeg;base64,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" alt="Creators Image" class="creators-image">
+            </a>
+            <p>Sanshray K Chakraborty(shoutout!).</p>
+        </div>
+
+        <button class="login-btn" onclick="openLoginPage()">Login</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RishavAI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.code === 'Space') {
+                var intro = document.getElementById('intro');
+                var topics = document.getElementById('topics');
+
+                if (!intro.classList.contains("show")) {
+                    intro.classList.add("show");
+                } else if (!topics.classList.contains("show")) {
+                    topics.classList.add("show");
+                }
+            }
+        });
+    </script>
+
+    <script>
+        function openLoginPage() {
+            window.location.href = 'Oakridge2.html';
+        }
+    </script>
+
+</body>
+
+</html>
